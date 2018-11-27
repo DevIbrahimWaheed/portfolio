@@ -359,147 +359,150 @@
 
 
           <div class="container">
-  <h3>GUI Using  KV Language and Python</h3>
-  <p>The Graphic User Inteface was broken into two components logic( done in Python) and presentation(done in Kivy)</p>
-  <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.app</span> <span style="color: #f92672">import</span>  <span style="color: #f8f8f2">App</span>
-  <span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.uix.boxlayout</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">BoxLayout</span>
-  <span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.properties</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">ObjectProperty</span>
-  <span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.core.window</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">Window</span>
-  <span style="color: #75715e"># The above is the Kivy framework , it allows me to create GUI in python.</span>
-  <span style="color: #75715e">#What makes kivy really powerful is that it sperates the logic(python) and the presentation(kv language)</span>
-  <span style="color: #75715e"># into separate components</span>
+            <h3>GUI in Python </h3>
+            <p>The Graphic User Inteface was broken into two components logic( done in Python) and presentation(done in Kivy)</p>
+            <!-- HTML generated using hilite.me --><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.app</span> <span style="color: #66d9ef">import</span>  <span style="color: #f8f8f2">App</span>
+    <span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.uix.boxlayout</span> <span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">BoxLayout</span>
+    <span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.properties</span> <span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">ObjectProperty</span>
+    <span style="color: #f92672">from</span> <span style="color: #f8f8f2">kivy.core.window</span> <span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">Window</span>
+    <span style="color: #f92672">import</span> <span style="color: #f8f8f2">webbrowser</span>
+    <span style="color: #f92672">import</span> <span style="color: #f8f8f2">fancy_tools_effects</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">fancy</span>
 
-  <span style="color: #f92672">import</span> <span style="color: #f8f8f2">webbrowser</span>
-  <span style="color: #f92672">import</span> <span style="color: #f8f8f2">fancy_tools_effects</span> <span style="color: #f92672">as</span> <span style="color: #f8f8f2">fancy</span>
-  <span style="color: #f92672">from</span> <span style="color: #f8f8f2">time</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">sleep</span>
 
-  <span style="color: #75715e"># All of the top imports are the Kivy GUI framework</span>
-  <span style="color: #75715e">#https://kivy.org/doc/ for help on the methods and classes</span>
+    <span style="color: #75715e"># All of the top imports are the Kivy GUI framework</span>
+    <span style="color: #75715e">#https://kivy.org/doc/ for help on the methods and classes</span>
 
 
 
-  <span style="color: #75715e"># i know that global is bad , but it had to be done</span>
+    <span style="color: #75715e"># i know that global is bad , but it had to be done</span>
 
-  <span style="color: #75715e">#Window.size = (width, height)</span>
-
-
-
-  <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TextDesign</span><span style="color: #f8f8f2">(BoxLayout):</span> <span style="color: #75715e"># Class inhertinace , the TestDesign used the boxlayout(from Kivy)</span>
-      <span style="color: #f8f8f2">sendText</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ObjectProperty(None)</span>
-      <span style="color: #f8f8f2">sendBoxerText</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ObjectProperty(None)</span>
-      <span style="color: #f8f8f2">seeText</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ObjectProperty(None)</span>
-      <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">intro</span><span style="color: #f8f8f2">(self):</span>
-          <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&quot;&quot;</span>
-  <span style="color: #e6db74">        To search for boxer do @{name of boxer}</span>
-  <span style="color: #e6db74">        To listen radio type listen radio</span>
-  <span style="color: #e6db74">        To search UFC type /UFCname</span>
-  <span style="color: #e6db74">        To search for Wreslter &quot;&quot;&quot;</span>
-
-          <span style="color: #f8f8f2">fancy</span><span style="color: #f92672">.</span> <span style="color: #f8f8f2">bg_tts(</span><span style="color: #e6db74">&quot;This is a test for guru Kate&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #75715e">#Window.size = (width, height)</span>
 
 
-      <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">sendData</span><span style="color: #f8f8f2">(self):</span> <span style="color: #75715e"># acts like a main......</span>
-          <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sendBoxerText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span>
 
-          <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;hi&quot;</span><span style="color: #f8f8f2">:</span>
-              <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">intro()</span>
-          <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userinput[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">in</span> <span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">:</span>
-              <span style="color: #f8f8f2">fancy</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">WikiSearch(userinput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lstrip(</span><span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">))</span>
-              <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">boxing()</span>
-          <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;play radio&quot;</span> <span style="color: #f92672">or</span> <span style="color: #e6db74">&quot;listen radio&quot;</span> <span style="color: #f8f8f2">:</span>
-              <span style="color: #f8f8f2">fancy</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">PlaySportRadio()</span>
-          <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;stop radio&quot;</span><span style="color: #f8f8f2">:</span>
-              <span style="color: #66d9ef">return</span>
-          <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">intro()</span>
+    <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TextDesign</span><span style="color: #f8f8f2">(BoxLayout):</span> <span style="color: #75715e"># Class inhertinace , the TestDesign used the boxlayout(from Kivy)</span>
+        <span style="color: #f8f8f2">sendText</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ObjectProperty(</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">sendBoxerText</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ObjectProperty(</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">seeText</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ObjectProperty(</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">intro</span><span style="color: #f8f8f2">(self):</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&quot;&quot;</span>
+    <span style="color: #e6db74">        To search for boxer do @{name of boxer}</span>
+    <span style="color: #e6db74">        To listen radio type listen radio</span>
+    <span style="color: #e6db74">        To search UFC type /UFCname</span>
+    <span style="color: #e6db74">        To search for Wreslter &quot;&quot;&quot;</span>
 
 
 
 
-          <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;wow&quot;</span><span style="color: #f8f8f2">:</span>
-              <span style="color: #f8f8f2">webbrowser</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;http://radiowav.live/&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">new</span><span style="color: #f92672">=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
-              <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;test is working&quot;</span><span style="color: #f8f8f2">)</span>
-      <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">boxing</span><span style="color: #f8f8f2">(self):</span>
-          <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Boxing Area&quot;</span>
-          <span style="color: #f8f8f2">f</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;hold.txt&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span>
-          <span style="color: #f8f8f2">data</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">f</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">read()</span>
-          <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">data</span>
-          <span style="color: #f8f8f2">f</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
+        <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">sendData</span><span style="color: #f8f8f2">(self):</span> <span style="color: #75715e"># acts like a main......</span>
+            <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sendBoxerText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span>
 
-      <span style="color: #75715e"># display text to label</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;hi&quot;</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">intro()</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">in</span> <span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">fancy</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">WikiSearch(userinput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lstrip(</span><span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">))</span>
+                <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">boxing()</span>
+            <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;play radio&quot;</span> <span style="color: #f92672">or</span> <span style="color: #e6db74">&quot;listen radio&quot;</span> <span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">fancy</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">PlaySportRadio()</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;stop radio&quot;</span><span style="color: #f8f8f2">:</span>
+                 <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&quot;&quot;</span>
+    <span style="color: #e6db74">            Work in Progress</span>
+    <span style="color: #e6db74">             &quot;&quot;&quot;</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">intro()</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;wow&quot;</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">webbrowser</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;http://radiowav.live/&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">new</span><span style="color: #f92672">=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+                <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;test is working&quot;</span><span style="color: #f8f8f2">)</span>
+
+        <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">boxing</span><span style="color: #f8f8f2">(self):</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Boxing Area&quot;</span>
+            <span style="color: #f8f8f2">f</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;hold.txt&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;r&quot;</span> <span style="color: #f8f8f2">,</span>  <span style="color: #f8f8f2">encoding</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;utf-8&quot;</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">data</span><span style="color: #f92672">=</span> <span style="color: #f8f8f2">f</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">read()</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">data</span>
+            <span style="color: #f8f8f2">f</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
+
+        <span style="color: #75715e"># display text to label</span>
 
 
 
 
 
-  <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TextPageApp</span><span style="color: #f8f8f2">(App):</span>
-      <span style="color: #66d9ef">pass</span>
+    <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TextPageApp</span><span style="color: #f8f8f2">(App):</span>
+        <span style="color: #66d9ef">pass</span>
 
 
-  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;__main__&#39;</span><span style="color: #f8f8f2">:</span>
-      <span style="color: #f8f8f2">TextPageApp()</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run()</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;__main__&#39;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">TextPageApp()</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run()</span>
 
 
 
-  <span style="color: #75715e"># i read two books for me to understand how kivy framework works</span>
-  <span style="color: #75715e">#   Dusty., P., 2014. Creating Apps In Kivy. O&#39;reilly Media.</span>
-  <span style="color: #75715e">#  Vaslikov, M., 2015. Kivy Blueprints. 1st ed. Packt Publishing Ltd.</span>
+    <span style="color: #75715e"># i read two books for me to understand how kivy framework</span>
+    <span style="color: #75715e">#   Dusty., P., 2014. Creating Apps In Kivy. O&#39;reilly Media.</span>
+    <span style="color: #75715e">#  Vaslikov, M., 2015. Kivy Blueprints. 1st ed. Packt Publishing Ltd.</span>
 
-  <span style="color: #75715e"># The above books really help me understand the difference between the logic side and presentation.</span>
-  </pre></div>
-  <h3>Textpage.kv (using the KV language (very similar to HTML))</h3>
-  <p>The kv language made it very easy for me to break up the developmnet of the GUI. As the styling was done in KV , and the logic was done in Python</p>
-  <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e"># A kv file is a mark up language very similar to the HTML , the strutcture is XML</span>
+    <span style="color: #75715e"># The above books really help me understand the difference between the logic side and presentation.</span>
+
+    </pre></div>
+
+          </div>
+
+
+
+  <div class="container">
+
+    <h3>GUI in KV Language </h3>
+    <p>The Graphic User Inteface was broken into two components logic( done in Python) and presentation(done in Kivy)</p>
+    <p>The kv language made it very easy for me to break up the developmnet of the GUI. As the styling was done in KV , and the logic was done in Python</p>
+    <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e"># A kv file is a mark up language very similar to the HTML , the strutcture is XML</span>
 <span style="color: #f8f8f2">TextDesign:</span> <span style="color: #75715e">#</span>
 <span style="color: #75715e">#put colors and design here</span>
 <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">TextDesign</span><span style="color: #a6e22e">@BoxLayout</span><span style="color: #f92672">&gt;</span>
-  <span style="color: #f8f8f2">sendText:</span> <span style="color: #f8f8f2">search_box</span>
-  <span style="color: #f8f8f2">seeText:</span> <span style="color: #f8f8f2">see_text</span>
-  <span style="color: #f8f8f2">sendBoxerText:</span> <span style="color: #f8f8f2">search_box</span> <span style="color: #75715e"># for another convo points</span>
-  <span style="color: #f8f8f2">orientation:</span><span style="color: #e6db74">&quot;vertical&quot;</span> <span style="color: #75715e"># sets the orientation of the BoxLayout</span>
-  <span style="color: #f8f8f2">height:</span> <span style="color: #e6db74">&quot;600px&quot;</span>
-  <span style="color: #f8f8f2">width</span> <span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;700px&quot;</span>
-  <span style="color: #f8f8f2">canvas:</span>
-    <span style="color: #f8f8f2">Color:</span>
-      <span style="color: #f8f8f2">rgb:</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0.93</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0.93</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0.93</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">sendText:</span> <span style="color: #f8f8f2">search_box</span>
+<span style="color: #f8f8f2">seeText:</span> <span style="color: #f8f8f2">see_text</span>
+<span style="color: #f8f8f2">sendBoxerText:</span> <span style="color: #f8f8f2">search_box</span> <span style="color: #75715e"># for another convo points</span>
+<span style="color: #f8f8f2">orientation:</span><span style="color: #e6db74">&quot;vertical&quot;</span> <span style="color: #75715e"># sets the orientation of the BoxLayout</span>
+<span style="color: #f8f8f2">height:</span> <span style="color: #e6db74">&quot;600px&quot;</span>
+<span style="color: #f8f8f2">width</span> <span style="color: #f8f8f2">:</span> <span style="color: #e6db74">&quot;700px&quot;</span>
+<span style="color: #f8f8f2">canvas:</span>
+<span style="color: #f8f8f2">Color:</span>
+  <span style="color: #f8f8f2">rgb:</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0.93</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0.93</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0.93</span><span style="color: #f8f8f2">)</span>
 
-  <span style="color: #f8f8f2">BoxLayout:</span>
-    <span style="color: #f8f8f2">height:</span><span style="color: #e6db74">&quot;40dp&quot;</span><span style="color: #75715e"># the hight of the content</span>
-    <span style="color: #f8f8f2">size_hint_y:</span><span style="color: #66d9ef">None</span>
-    <span style="color: #f8f8f2">TextInput:</span>
-      <span style="color: #f8f8f2">id:</span> <span style="color: #f8f8f2">search_box</span>
-      <span style="color: #f8f8f2">size_hint_x:</span><span style="color: #ae81ff">50</span><span style="color: #75715e">#the width of the widget text</span>
-      <span style="color: #f8f8f2">font_size:</span><span style="color: #ae81ff">20</span>
-      <span style="color: #f8f8f2">multiline:</span><span style="color: #66d9ef">False</span>
-      <span style="color: #f8f8f2">on_text_validate:root</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sendData()</span>
+<span style="color: #f8f8f2">BoxLayout:</span>
+<span style="color: #f8f8f2">height:</span><span style="color: #e6db74">&quot;40dp&quot;</span><span style="color: #75715e"># the hight of the content</span>
+<span style="color: #f8f8f2">size_hint_y:</span><span style="color: #66d9ef">None</span>
+<span style="color: #f8f8f2">TextInput:</span>
+  <span style="color: #f8f8f2">id:</span> <span style="color: #f8f8f2">search_box</span>
+  <span style="color: #f8f8f2">size_hint_x:</span><span style="color: #ae81ff">50</span><span style="color: #75715e">#the width of the widget text</span>
+  <span style="color: #f8f8f2">font_size:</span><span style="color: #ae81ff">20</span>
+  <span style="color: #f8f8f2">multiline:</span><span style="color: #66d9ef">False</span>
+  <span style="color: #f8f8f2">on_text_validate:root</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sendData()</span>
 
-      <span style="color: #75715e">#the width of the widget text</span>
-    <span style="color: #75715e">#https://kivy.org/doc/stable/api-kivy.uix.button.html</span>
-    <span style="color: #f8f8f2">CustomButton:</span>
-      <span style="color: #f8f8f2">text:</span><span style="color: #e6db74">&quot;Search&quot;</span>
-      <span style="color: #f8f8f2">size_hint_x:</span><span style="color: #ae81ff">25</span>
-      <span style="color: #f8f8f2">on_press:root</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sendData()</span>
-       <span style="color: #75715e"># this is the class method we are calling</span>
-  <span style="color: #f8f8f2">Label:</span>
-    <span style="color: #f8f8f2">id:</span> <span style="color: #f8f8f2">see_text</span>
-    <span style="color: #f8f8f2">text:</span><span style="color: #e6db74">&quot;Type hi to interacted with me:&quot;</span>
-    <span style="color: #f8f8f2">font_size:</span><span style="color: #ae81ff">14</span>
+  <span style="color: #75715e">#the width of the widget text</span>
+<span style="color: #75715e">#https://kivy.org/doc/stable/api-kivy.uix.button.html</span>
+
+   <span style="color: #75715e"># this is the class method we are calling</span>
+<span style="color: #f8f8f2">Button:</span>
+  <span style="color: #f8f8f2">text:</span><span style="color: #e6db74">&quot;Boxing&quot;</span>
+  <span style="color: #f8f8f2">size_hint_x:</span><span style="color: #ae81ff">25</span>
+  <span style="color: #f8f8f2">on_press:root</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">boxing()</span>
+<span style="color: #f8f8f2">Label:</span>
+<span style="color: #f8f8f2">id:</span> <span style="color: #f8f8f2">see_text</span>
+<span style="color: #f8f8f2">text:</span><span style="color: #e6db74">&quot;Type and press the enter key:&quot;</span>
+<span style="color: #f8f8f2">font_size:</span><span style="color: #ae81ff">14</span>
 
 
 
-    <span style="color: #75715e">#the width of the widght button</span>
+<span style="color: #75715e">#the width of the widght button</span>
 
 
 <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">CustomButton</span><span style="color: #a6e22e">@Button</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">:</span>
-  <span style="color: #f8f8f2">background_normal:</span> <span style="color: #e6db74">&#39;&#39;</span>
-  <span style="color: #f8f8f2">border:</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1</span>
-  <span style="color: #f8f8f2">background_color:</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">1.84</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">background_normal:</span> <span style="color: #e6db74">&#39;&#39;</span>
+<span style="color: #f8f8f2">border:</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1</span>
+<span style="color: #f8f8f2">background_color:</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">1.84</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
 </pre></div>
 
+    </div>
 
 
-
-
-          </div>
 
             <div class="container">
           <h3>Console</h3>
