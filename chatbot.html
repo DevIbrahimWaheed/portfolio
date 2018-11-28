@@ -157,19 +157,13 @@
 
             <div class="container">
                 <div class="main_title">
-		  <a name="#video">
-              <h2 style=" text-align:left; ">My Chabot</h2></a>
+		  <a id="#video">
+              <h2 style=" text-align:left; ">My Chabot</h2>
 
             <p style=" text-align:left; " > Play The Video To See how the chatbot looks
               or download the exe file</p>
-			<script langauge=JavaScript>
-			if (window.location.href.indexOf("#video") != -1) {
-			window.onload = function (event) {
-			window.location.hash = "#video";
-		};
-				}
-
-				</script>
+			
+			  </a>
             </div>
               </div>
           </section>
@@ -289,6 +283,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
         <!-- Optional JavaScript -->
+	<script langauge=JavaScript>
+			if (window.location.href.indexOf("#video") != -1) {
+			window.onload = function (event) {
+			window.location.hash = "#video";
+		};
+				}
+
+	</script>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.js"></script>
