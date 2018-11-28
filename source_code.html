@@ -73,7 +73,7 @@
               <h3>Fancy_tools_effects</h3>
               <p>Below is the fancy tools effects , i created this file so that the team memebers can used the function in thier file. It has three functions tts_Effect , WikiSearch  , PlaySportRadio and bg_tts</p>
 
-      <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e">#by Ibrahim waheed all of the module and any code that was not my have been commented</span>
+     <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e">#by Ibrahim waheed all of the module and any code that was not my have been commented</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">pyttsx3</span> <span style="color: #75715e">#https://pyttsx3.readthedocs.io/en/latest/ for the TextToSpeech Effect</span>
 <span style="color: #75715e"># maybe instead of pyttsx3 could have use gttsx a google cloud base text to speech&#39;</span>
 <span style="color: #75715e"># google one require internet! and API key</span>
@@ -81,7 +81,7 @@
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">wikipedia</span> <span style="color: #75715e"># will allow the bot to search on wikipedia</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span> <span style="color: #75715e">#importing system</span>
 <span style="color: #f92672">import</span>  <span style="color: #f8f8f2">webbrowser</span> <span style="color: #75715e"># for text to speech search google</span>
-<span style="color: #f92672">from</span> <span style="color: #f8f8f2">time</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">sleep</span>
+<span style="color: #f92672">from</span> <span style="color: #f8f8f2">time</span> <span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">sleep</span>
 <span style="color: #75715e"># importing audio module will need for text to speech week4</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">vlc</span>
 <span style="color: #75715e">#import TextToCLIWidget as gui</span>
@@ -102,7 +102,7 @@
         <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">stdout</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write(char)</span> <span style="color: #75715e"># will print each char one by one</span>
         <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">stdout</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">flush()</span> <span style="color: #75715e"># allows the char to be print one by one</span>
 
-    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #75715e"># below is the tts= test to speech effect</span>
     <span style="color: #f8f8f2">speech_engine</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">pyttsx3</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">init()</span>  <span style="color: #75715e"># invoking the pyttsx engine</span>
     <span style="color: #f8f8f2">voice</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">speech_engine</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">getProperty(</span><span style="color: #e6db74">&#39;voices&#39;</span><span style="color: #f8f8f2">)</span>
@@ -144,7 +144,7 @@
 <span style="color: #75715e">### Any more function effect will be below</span>
 
 
-<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">PlaySportRadio</span><span style="color: #f8f8f2">():</span>
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">PlaySportRadio</span><span style="color: #f8f8f2">(data):</span>
     <span style="color: #e6db74">&#39;&#39;&#39;This will play sport radio&#39;&#39;&#39;</span>
 
     <span style="color: #75715e"># this variable is my own , it will send the link to the radio</span>
@@ -167,10 +167,15 @@
 
     <span style="color: #75715e"># Set player media</span>
     <span style="color: #f8f8f2">player</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set_media(media)</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">data</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;stop&quot;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">player</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">pause()</span>
+    <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">player</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">play()</span>
+        <span style="color: #75715e"># Play the media</span>
 
-    <span style="color: #75715e"># Play the media</span>
-    <span style="color: #f8f8f2">player</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">play()</span>
-  </div>
+
+        <span style="color: #75715e">#not really stop but does the job</span>
+</pre></div>
 
             <div class="container">
               <h3>BoxingFunctions</h3>
