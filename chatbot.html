@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
     <head>
-	    
-	   <SCRIPT LANGUAGE=JavaScript>
-function now(){
-    window.location.reload(true);
-}
+	    <SCRIPT LANGUAGE=JavaScript>
+		if (window.location.href.indexOf("#video") != -1) {
+		window.onload = function (event) {
+		window.location.hash = "#video";
+		};
+		}
 </SCRIPT>
 	    
         <!-- Required meta tags -->
