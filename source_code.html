@@ -417,11 +417,11 @@
             <span style="color: #f8f8f2">fancy</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">PlaySportRadio(</span><span style="color: #e6db74">&quot;stop&quot;</span><span style="color: #f8f8f2">)</span>
         <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userinput</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;wow&quot;</span><span style="color: #f8f8f2">:</span>
             <span style="color: #f8f8f2">webbrowser</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;http://radiowav.live/&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">new</span><span style="color: #f92672">=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
-            
-            
-            
-            
-            
+
+
+
+
+
             <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;test is working&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">boxing</span><span style="color: #f8f8f2">(self):</span>
         <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seeText</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Boxing Area&quot;</span>
@@ -522,7 +522,7 @@
 <span style="color: #f92672">from</span> <span style="color: #f8f8f2">UFCFunctions</span> <span style="color: #66d9ef">import</span> <span style="color: #f92672">*</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">webbrowser</span>
 
-
+<span style="color: #75715e">#import TextToCLIWidget as tk</span>
 <span style="color: #75715e"># import the fuction text to speech</span>
 <span style="color: #75715e"># allows users to chat with guru kate</span>
 <span style="color: #75715e">#Note the chatbot is rule base , if questions are anwsered incorrently then system will prompt you to repeat process!</span>
@@ -530,17 +530,25 @@
 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">TellAllMaleBoxersNames</span><span style="color: #f8f8f2">():</span>
     <span style="color: #f8f8f2">WikiLinksBoxer()</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;To go back type b&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">userInput</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;&gt;&gt;&gt;&gt;&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;b&quot;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">main()</span>
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">TellAllFemaleBoxerNames</span><span style="color: #f8f8f2">():</span>
     <span style="color: #f8f8f2">WikiLinksFeMaleBoxer()</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;To go back type b&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">userInput</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;&gt;&gt;&gt;&gt;&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;b&quot;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">main()</span>
 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">SearchBoxer</span><span style="color: #f8f8f2">(text):</span>
-    <span style="color: #75715e"># lstrip remove the @ symbol</span>
+
     <span style="color: #f8f8f2">WikiSearch(text)</span>  <span style="color: #75715e"># Only problem is that the search can be about anything...</span>
 
-
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">UFCSearch</span><span style="color: #f8f8f2">(text):</span>
+    <span style="color: #f8f8f2">ufcSearch(text)</span>
 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">BoxerConvo</span><span style="color: #f8f8f2">(keep):</span>
-    <span style="color: #f8f8f2">SearchBoxer(keep)</span>
     <span style="color: #f8f8f2">tts_Effect(</span><span style="color: #e6db74">&quot;do you want me to search on google for this boxer&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;type yes or no&quot;</span><span style="color: #f8f8f2">)</span>
     <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">in</span> <span style="color: #e6db74">&quot;yes&quot;</span><span style="color: #f8f8f2">:</span>
@@ -577,26 +585,43 @@
 <span style="color: #e6db74">        Tell you live combat sport news </span>
 <span style="color: #e6db74">        Open website fighters articles</span>
 <span style="color: #e6db74">        Search for boxer with @Boxer name</span>
+<span style="color: #e6db74">        Search for UFC with /UFC name</span>
+<span style="color: #e6db74">        To Give All male boxer name or female type ListMale/ListFemale</span>
 <span style="color: #e6db74">        </span>
 <span style="color: #e6db74">    &#39;&#39;&#39;</span><span style="color: #f8f8f2">)</span>
-    <span style="color: #f8f8f2">bg_tts(</span><span style="color: #e6db74">&quot;say hi to start&quot;</span><span style="color: #f8f8f2">)</span>
 
 
-    <span style="color: #f8f8f2">News</span><span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;give news&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;play sports news&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;tell me the news&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;play news&quot;</span><span style="color: #f8f8f2">]</span>
+
+    <span style="color: #f8f8f2">News</span><span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;give news&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;play sports news&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;tell me the news&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;play news&quot;</span> <span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;play radio&quot;</span><span style="color: #f8f8f2">]</span>
     <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">str(input(</span><span style="color: #e6db74">&quot;&gt;&gt;&gt;&gt;&quot;</span><span style="color: #f8f8f2">))</span>
     <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userInput[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">:</span>
         <span style="color: #f8f8f2">clean</span><span style="color: #f92672">=</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lstrip(</span><span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">)</span>
-        <span style="color: #f8f8f2">print(clean)</span>
+        <span style="color: #f8f8f2">SearchBoxer(clean)</span>
+        <span style="color: #f8f8f2">sleep(</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
         <span style="color: #f8f8f2">BoxerConvo(clean)</span>
-    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userInput</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">News:</span>
-       <span style="color: #f8f8f2">PlaySportRadio()</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userInput[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;/&quot;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">clean</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lstrip(</span><span style="color: #e6db74">&quot;@&quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">print(clean)</span>
+        <span style="color: #f8f8f2">UFCSearch(clean)</span>
 
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userInput</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">News:</span>
+       <span style="color: #f8f8f2">PlaySportRadio(</span><span style="color: #e6db74">&quot;NONE&quot;</span><span style="color: #f8f8f2">)</span>
+       <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;To stop radio type STOP&quot;</span><span style="color: #f8f8f2">)</span>
+       <span style="color: #f8f8f2">userInput</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">str(input(</span><span style="color: #e6db74">&quot;&gt;&gt;&gt;&gt;&quot;</span><span style="color: #f8f8f2">))</span>
+       <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;stop&quot;</span><span style="color: #f8f8f2">:</span>
+           <span style="color: #f8f8f2">PlaySportRadio(</span><span style="color: #e6db74">&quot;stop&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;listmale&quot;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">TellAllMaleBoxersNames()</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">userInput</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;listfemale&quot;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">TellAllFemaleBoxerNames()</span>
 
 <span style="color: #75715e"># replace def main wth python way of main</span>
 
 <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;__main__&#39;</span><span style="color: #f8f8f2">:</span>
    <span style="color: #f8f8f2">main()</span>  <span style="color: #75715e"># run the chatbot interface</span>
 </pre></div>
+
+
 
         </div>
 
