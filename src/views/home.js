@@ -2,7 +2,7 @@ import React ,{useState ,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import TextTransition,{presets} from "react-text-transition"
 
-const Words = [ "Hi I'm Ibby" ,"Check my CV" ,"See GitHub"]
+const Words = [ "Hi I'm Ibby" ,"Welcome to my portfolio page" ,"See my GitHub" , "or LinkedIn"]
 
 function Home(props){
      const [index, setIndex] = React.useState(0);

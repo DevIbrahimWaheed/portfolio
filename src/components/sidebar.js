@@ -46,10 +46,10 @@ function SideBar(props)  {
           <Link to="/my-project">My Projects</Link>
           </Menu.Item>
           <Menu.Item key="4" icon={<LinkedinOutlined />}>
-            LinkedIn
+            <a href="https://www.linkedin.com/in/ibrahim-waheed-84164a83/">LinkedIn</a>
           </Menu.Item>
           <Menu.Item key="5" icon={<GithubOutlined />}>
-            GitHub
+           <a href="https://github.com/DevIbrahimWaheed?tab=repositories"> GitHub</a>
           </Menu.Item>
         </Menu>
         </Sider>
