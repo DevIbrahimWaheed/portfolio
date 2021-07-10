@@ -1,14 +1,35 @@
-import React ,{useState} from 'react';
+import React ,{useState ,useEffect} from 'react';
 import ReactDOM from 'react-dom';
+import TextTransition,{presets} from "react-text-transition"
 
-
+const Words = [ "Hi I'm Ibby" ,"Check my CV" ,"See GitHub"]
 
 function Home(props){
+     const [index, setIndex] = React.useState(0);
+
+useEffect(()=>{
+const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+
+
+},[])
 
 return (
   
-  <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-             Home Page
+  <div style={{ padding: 24, minHeight: 360 }}>
+         <h1>
+         <TextTransition
+        text={ Words[index % Words.length] }
+        springConfig={ presets.molasses }
+      />
+         
+         </h1>
+         
+
+
             </div>
   
   
