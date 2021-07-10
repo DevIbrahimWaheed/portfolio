@@ -5,6 +5,8 @@ import 'antd/dist/antd.css';
 import {
       MenuUnfoldOutlined,
   MenuFoldOutlined,
+  LinkedinOutlined,
+  GithubOutlined
 } from '@ant-design/icons'
 
 
@@ -13,21 +15,19 @@ const {Sider} = Layout
 
 
 function SideBar(props)  {
-    const [collapsed,setCollapsed] = useState({
-        collapsed:false
-    });
+    const [collapsed,setCollapsed] = useState(false);
 
-    const toggleCollapse = () => {
-        setCollapsed({
-            collapsed:true
-        })
+    const toggleCollapse = collapsed => {
+        console.log(collapsed);
+        setCollapsed(collapsed)
     }
 
 
     return (
      <>
 
-
+  <Sider>
+          <div className="logo" />
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['1']}
@@ -36,15 +36,22 @@ function SideBar(props)  {
           inlineCollapsed={collapsed}
         >
           <Menu.Item key="1" >
-            Option 1
+           Home
           </Menu.Item>
           <Menu.Item key="2" >
-            Option 2
+           About Me
           </Menu.Item>
           <Menu.Item key="3">
-            Option 3
+           My Projects
+          </Menu.Item>
+          <Menu.Item key="4" icon={<LinkedinOutlined />}>
+            LinkedIn
+          </Menu.Item>
+          <Menu.Item key="5" icon={<GithubOutlined />}>
+            GitHub
           </Menu.Item>
         </Menu>
+        </Sider>
      </>
         
     )
