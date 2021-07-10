@@ -1,5 +1,6 @@
 import React ,{useState} from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from "react-router-dom";
 import { Menu,Layout } from 'antd';
 import 'antd/dist/antd.css';
 import {
@@ -36,13 +37,13 @@ function SideBar(props)  {
           inlineCollapsed={collapsed}
         >
           <Menu.Item key="1" >
-           Home
+           <Link to="/portfolio">Home</Link>
           </Menu.Item>
           <Menu.Item key="2" >
-           About Me
+           <Link to="/about">About Me</Link>
           </Menu.Item>
           <Menu.Item key="3">
-           My Projects
+          <Link to="/my-project">My Projects</Link>
           </Menu.Item>
           <Menu.Item key="4" icon={<LinkedinOutlined />}>
             LinkedIn
