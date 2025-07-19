@@ -16,6 +16,7 @@ import Sidebar from './components/sidebar'
 import Home from './views/home'
 import About from './views/about'
 import MyProject from './views/my-projects'
+import Contact from './views/contact'
 
 
 const { Header, Content, Footer } = Layout;
@@ -34,8 +35,9 @@ function App() {
             
             <Route path="/about" children={<About/>} />
             <Route path="/my-project" children={<MyProject/>} />
-            
-            
+            <Route path="/contact" children={<Contact/>} />
+
+
             </Switch>
          
           </Content>
