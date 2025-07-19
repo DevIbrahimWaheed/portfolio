@@ -9,25 +9,18 @@ function About(props){
 
 
   
-const contentStyle = {
-  height: '25em',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
 
 
 return (
   
-  <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-             <Divider orientation="left"><h3>About Me</h3></Divider>
-              <h2>Who Am I</h2>
-            <p> I am a computer science grad from Coventry university. I love developing and expanding my own programming skills 
+  <div className="site-layout-background container">
+             <Divider orientation="left"><h3 className="heading">About Me</h3></Divider>
+              <h2 className="heading">Who Am I</h2>
+            <p className="paragraph"> I am a computer science grad from Coventry university. I love developing and expanding my own programming skills
             and am often amazed on the ever growing of programming languages. </p>
-                 <p> Click here to download my CV/Resume  currently is short as i have recently graduated 😅 </p>
-            <Divider ><h3>What I Do </h3></Divider>
-            <h2>2 year Career Plan</h2>
+                 <p className="paragraph"> Click here to download my CV/Resume  currently is short as i have recently graduated 😅 </p>
+             <Divider ><h3>What I Do </h3></Divider>
+            <h2 className="heading">2 year Career Plan</h2>
      
 <Timeline mode="alternate">
     <Timeline.Item color="green">Graduate Coventry University 2021 July</Timeline.Item>

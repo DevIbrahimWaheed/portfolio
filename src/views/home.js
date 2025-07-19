@@ -17,16 +17,16 @@ const intervalId = setInterval(() =>
 },[])
 
 return (
-  
-  <div style={{ padding: 24, minHeight: 360 }}>
-         <h1>
+
+  <div className="container">
+         <h1 className="heading">
          <TextTransition
         text={ Words[index % Words.length] }
         springConfig={ presets.molasses }
       />
-         
+
          </h1>
-         
+
 
 
             </div>
