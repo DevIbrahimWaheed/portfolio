@@ -1,39 +1,45 @@
-import React ,{useState} from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from "react-router-dom";
-import { Menu,Layout } from 'antd';
+import { Link } from 'react-router-dom';
+import { Menu, Layout } from 'antd';
 import 'antd/dist/antd.css';
 import {
-      MenuUnfoldOutlined,
+  MenuUnfoldOutlined,
   MenuFoldOutlined,
   LinkedinOutlined,
-  GithubOutlined
-} from '@ant-design/icons'
+  GithubOutlined,
+} from '@ant-design/icons';
 
 
-const {SubMenu} = Menu;
-const {Sider} = Layout
+const { SubMenu } = Menu;
+const { Sider } = Layout;
 
 
-function SideBar(props)  {
-    const [collapsed,setCollapsed] = useState(false);
+function SideBar(props) {
+  const [collapsed, setCollapsed] = useState(false);
 
-    const toggleCollapse = collapsed => {
-        console.log(collapsed);
-        setCollapsed(collapsed)
-    }
+  const toggleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
 
 
     return (
      <>
 
-  <Sider>
+  <Sider collapsed={collapsed} trigger={null}>
           <div className="logo" />
-        <Menu
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['1']}
-          mode="inline"
-          theme="dark"
+          <div style={{ padding: '16px', textAlign: 'center' }}>
+            {collapsed ? (
+              <MenuUnfoldOutlined onClick={toggleCollapse} style={{ color: '#fff' }} />
+            ) : (
+              <MenuFoldOutlined onClick={toggleCollapse} style={{ color: '#fff' }} />
+            )}
+          </div>
+          <Menu
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['1']}
+            mode="inline"
+            theme="dark"
           inlineCollapsed={collapsed}
         >
           <Menu.Item key="1" >
