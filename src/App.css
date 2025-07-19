@@ -1,26 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #18bc9c;
+  --text-color: #333;
+}
 
 .ant-layout .site-layout {
-    background-image: url("img/Profile.jpg");
-    background-size: cover;
-    box-sizing: border-box;
-  }
+  background-image: url("img/Profile.jpg");
+  box-sizing: border-box;
+}
+.ant-layout .site-layout,
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
  
-  .logo{
+.logo{
+  background-image: url("img/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 90px;
+  width: 200px;
+}
 
-    background-image: url("img/logo.jpg");
-    height: 90px;
-    width: 200px;
+[class*="site-layout"] .site-layout-background {
+  background: #fff;
+}
+  [data-theme="dark"] .site-layout ,.site-layout-background {
+    background: #141414;
   }
-
-  .site-layout .site-layout-background {
-    background: rgb(255, 255, 255);
-  }
-    [data-theme="dark"] .site-layout ,.site-layout-background {
-      background: #141414;
-    }
 
 
 
@@ -63,14 +75,22 @@ h1{
   font-size: 7em;
   padding: 2.5em;
   color: #fff !important;
-
-
-}
-h1 , h2 , h3 ,h4 {
-  font-family: 'Encode Sans SC', sans-serif;
 }
 
-p{
-  font-family: 'Ubuntu', sans-serif;
+.heading {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
   font-size: 1em;
+  margin-bottom: 1rem;
+}
+
+.container {
+  padding: 24px;
+  min-height: 360px;
 }
