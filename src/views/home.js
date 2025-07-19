@@ -1,5 +1,4 @@
-import React ,{useState ,useEffect} from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect } from 'react';
 import TextTransition,{presets} from "react-text-transition"
 
 const Words = [ "Hi I'm Ibby" ,"Welcome to my portfolio page" ,"See my GitHub" , "or LinkedIn"]
